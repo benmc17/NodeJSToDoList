@@ -2,35 +2,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>My To Do List</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+	<%- include templates/header.ejs %>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-inverse">
-            <a href="/" class="navbar-brand">My Node.js Site</a>
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-	<!-- MAIN CONTENT HERE -->
-	<%- defineContent('hero') %>
-
-	<main>
-        <div class="container">
-            <%- body %>
-        </div>
-    </main>
-
+    <%- include templates/content.ejs %>
     <footer>
-        Copyright &copy; me 2017
+        <%- include templates/footer.ejs %>
     </footer>
 </body>
 </html>
