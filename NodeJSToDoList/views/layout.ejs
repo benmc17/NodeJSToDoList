@@ -20,20 +20,12 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Welcome to my Node.js Site</h2>
-            <p>My new test site!</p>
-            <a href="/" class="btn btn-lg btn-primary">Get Started</a>
-            <a href="/contact" class="btn btn-lg btn-primary">Contact</a>
-        </div>
-    </section>
+	<!-- MAIN CONTENT HERE -->
+	<%- defineContent('hero') %>
 
-    <main>
+	<main>
         <div class="container">
-            <div class="jumbotron text-center">
-                Home Page
-            </div>
+            <%- body %>
         </div>
     </main>
 

@@ -1,7 +1,12 @@
 'use strict';
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
 var app = express();
 var port = 8080;
+
+// EJS Template Engine
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 // location of routes file
 var router = require('./app/routes');
