@@ -1,7 +1,7 @@
 ﻿'use strict';
-var express    = require('express');
+var express = require('express');
 
-var router     = express.Router();
+var router = express.Router();
 
 module.exports = router;
 
@@ -18,5 +18,6 @@ router.get('/contact', function (req, res) {
 });
 
 router.post('/contact', function (req, res) {
-
+    //res.end("<b>" + req.body.emailaddress + "</b>");
+    res.send(req.body);
 });
