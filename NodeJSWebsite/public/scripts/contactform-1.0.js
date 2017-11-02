@@ -4,24 +4,26 @@ var contactform = (function ($) {
 
     var init = function () {
         $('#contact-form').submit(function (event) {
-            event.preventDefault();
             _submitContactForm();
+            event.preventDefault();
         });
     };
 
     var _submitContactForm = function () {
-        //var email = $('#emailaddress').val();
-        //var message = $('#contact-message').val();
-
         $.ajax({
             url: 'http://localhost:8080/contact',
             type: 'post',
-            //dataType: 'application/json',
-            //data: $('#contact-form').serialize(),
-            data: { test: "TEST" },
+            contentType: 'application/json',
+            data: JSON.stringify({
+                emailaddress: $('#email-address').val(),
+                message: $('#contact-message').val(),
+                name: $('#contact-name').val()
+            }),
+            dataType: 'json',
             success: function (data) {
-                alert(data.test);
-                $('#contact-form-wrapper').html("<h3>Thank you, we'll get back to you soon</h3>");
+                if (data.success) {
+                    $('#contact-form-wrapper').html("<h3>Thank you, we'll get back to you soon " + data.name + "</h3>");
+                }
             }
         });
     };

@@ -11,7 +11,6 @@ var port = 8080;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 app.use(expressLayouts);
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // location of routes file
